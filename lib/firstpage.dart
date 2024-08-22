@@ -49,20 +49,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget cupertinoScaffold() {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Main Page'),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              getCurrentTime(),
-              style:
-                  CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+      child: CustomScrollView(
+        slivers: <Widget>[
+          const CupertinoSliverNavigationBar(
+            backgroundColor: Colors.transparent,
+            largeTitle: Text('Main Page'),
+          ),
+          SliverFillRemaining(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    getCurrentTime(),
+                    style: CupertinoTheme.of(context)
+                        .textTheme
+                        .navLargeTitleTextStyle,
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

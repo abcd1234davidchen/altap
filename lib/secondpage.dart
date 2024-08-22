@@ -28,14 +28,21 @@ class SecondPage extends StatelessWidget {
 
   Widget cupertinoScaffold() {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: const Text('Second Page'),
-      ),
-      child: Center(
-        child: CupertinoButton(
-          onPressed: toggleDesign,
-          child: const Text('Toggle Design'),
-        ),
+      child: CustomScrollView(
+        slivers: <Widget>[
+          const CupertinoSliverNavigationBar(
+            backgroundColor: Colors.transparent,
+            largeTitle: Text('Second Page'),
+          ),
+          SliverFillRemaining(
+            child: Center(
+              child: CupertinoButton(
+                onPressed: toggleDesign,
+                child: const Text('Toggle Design'),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

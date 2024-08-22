@@ -125,12 +125,12 @@ class MainScreenState extends State<MainScreen> {
       tabBar: CupertinoTabBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Home',
+            icon: Icon(CupertinoIcons.today),
+            label: 'Main',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.arrow_right),
-            label: 'Second Page',
+            label: 'Second',
           ),
         ],
         currentIndex: _selectedIndex,
